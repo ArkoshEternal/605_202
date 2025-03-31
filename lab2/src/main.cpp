@@ -17,7 +17,7 @@
  #include <vector>
  #include <fstream>
  #include <cstdlib>
- #include <prefix_convert.h>
+ #include "prefix_convert.h"
 
  // Program entry point
 int main(int argc, char *argv[]) { 
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
             continue;
         }
         // clean up the line    
-        outfile << convert_to_postfix(line) << endl; 
+        outfile << convert_to_postfix_recursive(line) << endl; 
     }
     // Copy the output to the original file
     file.close();

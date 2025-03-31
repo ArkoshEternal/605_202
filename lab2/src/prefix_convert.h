@@ -64,11 +64,29 @@ bool is_valid_prefix(string expression) {
     return (operator_count + 1 == operand_count);
 }
 
+// Recursive helper function to help with converting from prefix 
+// to postfix
+
+string converter_helper(istringstream &input) {
+    char c; 
+    if(!(input >> c)) { 
+        return ""; // Return empty string if no more input
+    }
+
+    if (value_type(string(1,c)) == OPERATOR) { 
+        // If the character is an operator, recursively get the left and right operands
+        string left_operand = converter_helper(input);
+        string right_operand = converter_helper(input);
+        // Return the postfix expression
+        return left_operand + right_operand + string(1,c);
+    } 
+    return string(1,c); 
+}
 // Recursive function which converts valid prefix expression to postfix
 // Read More: https://en.wikipedia.org/wiki/reverse_polish_notation
-string convert_to_postfix(string line)
-{ 
-
+string convert_to_postfix_recursive(const string &line)
+{  
+    istringstream iss(line);
+    return converter_helper(iss);
 }
-
 #endif // PREFIX_CONVERT_H
