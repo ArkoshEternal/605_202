@@ -1,4 +1,4 @@
- Homework Four : Queues and Lists
+# Homework Four : Queues and Lists
 
 ## Question One 
 
@@ -127,9 +127,6 @@ function swap(n,m,*head);
     repeat(m-1): 
         m_prev = m; 
         m = m.next; 
-    
-    if m_prev is null 
-        head = m
     else
         m_prev.next = n;
     

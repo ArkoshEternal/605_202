@@ -1,0 +1,44 @@
+Prefix expressions:
+---------------------
++/U$VH$DS
+b
+2J
+lfXu*n
+AVzqr;iL
+= jr,VM
+I
+,otvD
+*+VA-$SA-AE
+P3Sl/n
+iXmJcXN$4F
+-GB
+ey1
+rU
++M$/DKK
++aFUa*N
+*$*NQ-PB/S+HV
+G
+Fv
+Hv=NiSa
+Postfix expressions:
+---------------------
+UVH$/DS$+
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+I
+Invalid prefix expression
+VA+SA$AE--*
+Invalid prefix expression
+Invalid prefix expression
+GB-
+Invalid prefix expression
+Invalid prefix expression
+MDK/K$+
+Invalid prefix expression
+NQ*PB-$SHV+/*
+G
+Invalid prefix expression
+Invalid prefix expression
