@@ -53,3 +53,5 @@ of modification I made to the original file. I also would try to handle the stri
 
 The program can handle inconsistent spacing, which helps deal with errant user input
 Also - I build a testing suite (though its from last assignment as well), which builds test suite files and checks them automatically using randomization.
+
+## NOTE: please consider running this assignment through the python file for best result of test
