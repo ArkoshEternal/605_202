@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DParkeHW9.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="homework-nine-seaching-ordered-data-and-search-trees">Homework Nine: Seaching Ordered Data and Search Trees</h1>
+<h2 id="question-one">Question One</h2>
+<blockquote>
+<p>For questions 1 – 2, compare the efficiency of using sequential search on an
+ordered table of size n and an unordered table of the same size for the key target:
+a. If no record with the key target is present.
+b. If one record with the key target is present and only one is sought</p>
+</blockquote>
+<p>a. For both an ordered and unordered table, it'll be a worst case of o(n), but for the ordered table, you can terminate if the record is not found by the time it would be expected, so you'll have a best case of early termination</p>
+<p>b. For an unordered table, it'll still be a search with worst case o(n) and average case of o(n/2), just as the ordered table is, but it'll still be o(n), though it again may be able to terminate early, so it may have an advantage</p>
+<h2 id="question-two">Question Two</h2>
+<blockquote>
+<p>a. If more than one record with the key target is present and it is desired to find
+only the first one.
+b. If more than one record with the key target is present and it is desired to find
+them all.</p>
+</blockquote>
+<p>a. For the unordered case, you'll still have to just check until you get a match, which can be anywhere in the tree - thus, you'll have o(n), with n/2 average elements searched to find assuming random distribution. For the ordered case, if there are multiple matches, you'll find the match earlier, since it'll be the first key you check once you trasverse the cluster. Thus, it'll have the same o(n) but on average, it should be a bit more efficient.</p>
+<p>b. For the unordered case, you'll have to check every entry every time to ensure all cases are searched. In the oerdered table, you'll find the cluster of keys, and then know you've found them all whenver the key looked at is no longer the one you're searching for. Thus, the ordered will be slightly more performant</p>
+<h2 id="question-three">Question Three</h2>
+<blockquote>
+<p>Write a method delete(key1, key2) to delete all records with keys between key1
+and key2 (inclusive) from a binary search tree whose nodes look like this:
+[left][key][right]</p>
+</blockquote>
+<pre class="hljs"><code><div>struct bst_node
+    int key
+    int left
+    int right
+end
+
+
+function delete(root, key1, key2);
+
+ if root-&gt;key &lt; key1 begin
+        root-&gt;right = delete(root-&gt;right, key1, key2)
+        return root
+    end
+    else if root-&gt;key &gt; key2 begin
+        root-&gt;left = delete(root-&gt;left, key1, key2)
+        return root
+    end
+    else begin
+        if root-&gt;left == null begin
+            return delete(root-&gt;right, key1, key2)
+        end
+        else if root-&gt;right == null begin
+            return delete(root-&gt;left, key1, key2)
+        end
+        else begin 
+            successor = find_min(root-&gt;right)
+            root-&gt;key = successor-&gt;key
+            root-&gt;right = delete_node(root-&gt;right, successor-&gt;key)
+            root-&gt;left = delete(root-&gt;left, key1, key2)
+            root-&gt;right = delete(root-&gt;right, key1, key2)
+            return root
+        end 
+    end
+endfunction: delete
+
+function find_min(node)
+    while node-&gt;left != null
+        node = node-&gt;left
+    endwhile
+    return node
+endfunction: find_min
+
+function delete_node(root, key)
+    if root == null
+        return null
+    endif
+
+    if key &lt; root-&gt;key
+        root-&gt;left = delete_node(root-&gt;left, key)
+    elseif key &gt; root-&gt;key
+        root-&gt;right = delete_node(root-&gt;right, key)
+    else
+        if root-&gt;left == null
+            return root-&gt;right
+        elseif root-&gt;right == null
+            return root-&gt;left
+        else
+            successor = find_min(root-&gt;right)
+            root-&gt;key = successor-&gt;key
+            root-&gt;right = delete_node(root-&gt;right, successor-&gt;key)
+        endif
+    endif
+    return root
+endfunction: delete_node
+
+</div></code></pre>
+<h2 id="question-four">Question Four</h2>
+<blockquote>
+<p>Write a method to delete a record from a B-tree in order n</p>
+</blockquote>
+<pre class="hljs"><code><div>function delete_from_btree(node, key)
+    index = find_key_index(node, key)
+
+    if index &lt; node-&gt;key_count and node-&gt;keys[index] == key begin
+        if node-&gt;leaf begin
+            remove_key(node, index)
+        end
+        else begin
+            if has_enough_keys(node-&gt;children[index]) begin
+                pred = get_predecessor(node, index)
+                node-&gt;keys[index] = pred
+                delete_from_btree(node-&gt;children[index], pred)
+            end
+            else if has_enough_keys(node-&gt;children[index + 1]) begin
+                succ = get_successor(node, index)
+                node-&gt;keys[index] = succ
+                delete_from_btree(node-&gt;children[index + 1], succ)
+            end 
+            else begin
+                merge_children(node, index)
+                delete_from_btree(node-&gt;children[index], key)
+            end
+        end
+    else begin
+        if node-&gt;leaf
+            return // key not found
+        end
+
+        if node-&gt;children[index]-&gt;key_count == MIN_KEYS
+            fix_child(node, index)
+        end
+
+        delete_from_btree(node-&gt;children[index], key)
+    end
+endfunction: delete_from_btree
+
+function find_key_index(node, key)
+    i = 0
+    while i &lt; node-&gt;key_count and node-&gt;keys[i] &lt; key
+        i = i + 1
+    endwhile
+    return i
+endfunction: find_key_index
+
+</div></code></pre>
+
+</body>
+</html>
