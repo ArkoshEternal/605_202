@@ -1,0 +1,44 @@
+Prefix expressions:
+---------------------
+meP9tJB$
+DKjn
+/7fzF
+8VlIe
+$*+JA+VF+-AL$WQ
+CilR
++Q+-HF*KK
+$**KB+EO-*MX/LH
+-/O-MB$DC
+aK"n6FkK4B
+b09$Z
+X%hFN=
+*/$CUG+/BF*ES
+*CP
+k*-J8
+tQb
+NjqDu3
+-X**EL/TB
+/IW
+---DY+LO*K-NA
+Postfix expressions:
+---------------------
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+JA+VF+*AL-WQ$+$
+Invalid prefix expression
+QHF-KK*++
+KB*EO+*MX*LH/-$
+OMB-/DC$-
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+CU$G/BF/ES*+*
+CP*
+Invalid prefix expression
+Invalid prefix expression
+Invalid prefix expression
+XEL*TB/*-
+IW/
+DY-LO+-KNA-*-
